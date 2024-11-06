@@ -39,7 +39,7 @@ def info():
 
 
 def servers():
-    url = app.config.get(HOST) or "%s://%s" % (request.scheme, request.host)
+    url = app.config.get(HOST) or "%s://%s" % ("https", request.host)
     if app.config["URL_PREFIX"]:
         url = url + "/" + app.config["URL_PREFIX"]
     if app.config["API_VERSION"]:

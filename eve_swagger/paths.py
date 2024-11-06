@@ -27,6 +27,9 @@ def paths():
             continue
 
         rd["url"] = _clear_regex(rd["url"])
+        if rd["url"].startswith("/"):
+            rd["url"] = rd["url"][1:]
+
         rd["resource_title"] = _clear_regex(rd["resource_title"])
         methods = rd["resource_methods"]
         if methods:
